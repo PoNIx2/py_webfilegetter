@@ -10,7 +10,7 @@ def main():
         response = requests.get(url)
         response.raise_for_status()  # Raise an error for bad responses
         filename = url.split("/")[-1]  # Get the filename from the URL
-        # ダウンロードしたファイルがutf-8でなければ、utf-8に変換する
+        # Convert downloaded content to UTF-8 when it is not already UTF-8.
         content = response.content
         try:
             content.decode('utf-8')
